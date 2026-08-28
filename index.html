@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZotakDev · Landing Pages</title>
+  <!-- Font Awesome (iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #fafcff;
+      color: #1e293b;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #2563eb;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      z-index: 999;
+      padding: 16px 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: #334155;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #0f172a;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: #0f172a;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(145deg, #f8fcff 0%, #eef4ff 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: #2563eb;
+      position: relative;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #475569;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image .illustration {
+      background: #ffffff;
+      border-radius: 60% 40% 30% 70% / 50% 40% 60% 50%;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1/1;
+      box-shadow: 0 30px 60px rgba(37, 99, 235, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      color: #2563eb;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* ---------- SECCIÓN SERVICIOS ---------- */
+    .services {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #64748b;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: #f8fcff;
+      padding: 36px 28px;
+      border-radius: 28px;
+      border: 1px solid rgba(37, 99, 235, 0.06);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #2563eb;
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
+    }
+
+    .service-card i {
+      font-size: 2.8rem;
+      color: #2563eb;
+      margin-bottom: 20px;
+      background: #eef4ff;
+      padding: 16px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .service-card p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- SOBRE MÍ ---------- */
+    .about {
+      padding: 80px 0;
+      background: #f8fcff;
+    }
+
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .about-content h2 span {
+      color: #2563eb;
+    }
+
+    .about-content p {
+      color: #475569;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 32px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: block;
+    }
+
+    .stat-item .label {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .about-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image .avatar {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7rem;
+      color: #fff;
+      box-shadow: 0 30px 50px rgba(37, 99, 235, 0.25);
+    }
+
+    /* ---------- TESTIMONIOS ---------- */
+    .testimonials {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: #f8fcff;
+      padding: 32px 28px;
+      border-radius: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: 0.3s;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    .testimonial-card i {
+      color: #2563eb;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card .author {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .testimonial-card .role {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* ---------- CTA FINAL ---------- */
+    .cta-section {
+      padding: 80px 0;
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-section .btn {
+      background: #fff;
+      color: #0f172a;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-section .btn:hover {
+      background: #e2e8f0;
+      transform: translateY(-3px);
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      background: #0b1324;
+      padding: 40px 0 24px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer .socials {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer .socials a {
+      color: #94a3b8;
+      font-size: 1.4rem;
+      transition: color 0.2s;
+    }
+
+    .footer .socials a:hover {
+      color: #ffffff;
+    }
+
+    .footer .copy {
+      font-size: 0.9rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 992px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image .illustration {
+        max-width: 300px;
+        font-size: 6rem;
+      }
+
+      .about .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-stats {
+        justify-content: center;
+      }
+
+      .about-image .avatar {
+        width: 200px;
+        height: 200px;
+        font-size: 5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 24px 32px;
+        gap: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 120px 0 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-image .illustration {
+        max-width: 200px;
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="logo">zotak<span>dev</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#testimonials">Testimonios</a></li>
+        <li><a href="#contact" class="btn" style="padding: 8px 24px; background: #2563eb; color: #fff; box-shadow: none;">Contacto</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Transformo tus ideas en <span>presencia digital</span></h1>
+        <p>
+          Soy <strong>ZotakDev</strong>, un desarrollador novato con pasión por el diseño limpio y funcional.
+          Creo <strong>landing pages estáticas</strong> modernas para negocios emergentes.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">Hablemos</a>
+          <a href="#services" class="btn btn-outline">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="illustration">
+          <i class="fas fa-code"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Lo que ofrezco</h2>
+      <p class="section-subtitle">
+        Soluciones digitales sencillas, rápidas y efectivas para que tu negocio destaque.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Landing Pages</h3>
+          <p>Diseño de páginas estáticas, optimizadas para conversión y con estilo moderno.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Totalmente Responsive</h3>
+          <p>Tu página se verá impecable en cualquier dispositivo: móvil, tablet o escritorio.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-bolt"></i>
+          <h3>Carga Rápida</h3>
+          <p>Código ligero y optimizado, sin dependencias pesadas, para una experiencia veloz.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-palette"></i>
+          <h3>Diseño a Medida</h3>
+          <p>Adapto la identidad visual de tu negocio en cada detalle, con colores y tipografías.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MÍ ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <h2>Hola, soy <span>ZotakDev</span></h2>
+        <p>
+          Aunque soy novato en el mundo del desarrollo web, tengo una gran pasión por aprender
+          y crear soluciones que realmente ayuden a pequeños negocios a tener presencia online.
+        </p>
+        <p>
+          Cada proyecto lo abordo con dedicación, atención al detalle y un enfoque centrado
+          en el usuario. Mi objetivo es que tu landing page no solo sea bonita, sino que
+          también convierta visitantes en clientes.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="number">+5</span>
+            <span class="label">Proyectos entregados</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">100%</span>
+            <span class="label">Satisfacción</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">24/7</span>
+            <span class="label">Comunicación</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <div class="avatar">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen de mí</h2>
+      <p class="section-subtitle">
+        Pequeños emprendedores que confiaron en mi trabajo.
+      </p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            “Superó mis expectativas. Mi landing page quedó exactamente como la imaginaba,
+            y en menos de una semana estaba funcionando.”
+          </p>
+          <div class="author">— Laura G.</div>
+          <div class="role">Dueña de cafetería</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            “Muy profesional a pesar de ser novato. Me explicó cada paso y logró un diseño
+            que refleja la esencia de mi marca.”
+          </p>
+          <div class="author">— Carlos M.</div>
+          <div class="role">Consultor freelance</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            “Excelente relación calidad-precio. La página carga rápido y se ve increíble
+            en el móvil. Totalmente recomendable.”
+          </p>
+          <div class="author">— Sofía R.</div>
+          <div class="role">Emprendedora digital</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>¿Listo para dar el salto?</h2>
+      <p>
+        Cuéntame tu idea y juntos crearemos una landing page que impulse tu negocio.
+        ¡Sin compromiso!
+      </p>
+      <a href="mailto:tuemail@example.com" class="btn">Contáctame ahora</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="copy">
+        &copy; 2026 zotakdev · Hecho con <i class="fas fa-heart" style="color: #ef4444; font-size: 0.9rem;"></i>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // --- Menú hamburguesa ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (para móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // --- Cerrar menú al hacer scroll (opcional) ---
+    window.addEventListener('scroll', () => {
+      if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // --- Smooth scroll para todos los enlaces internos (opcional) ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
