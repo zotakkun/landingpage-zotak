@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZotakDev · Landing Pages</title>
-  <!-- Font Awesome (iconos) -->
+  <title>ZotakDev · Servicios computacionales</title>
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     /* ---------- RESET & BASE (Gruvbox) ---------- */
@@ -16,8 +16,8 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: #fbf1c7; /* Gruvbox light0 */
-      color: #282828; /* Gruvbox dark0 */
+      background-color: #fbf1c7;
+      color: #282828;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
@@ -37,7 +37,7 @@
       padding: 0 24px;
     }
 
-    /* ---------- BUTTONS (Gruvbox) ---------- */
+    /* ---------- BUTTONS ---------- */
     .btn {
       display: inline-block;
       padding: 12px 32px;
@@ -47,20 +47,20 @@
       transition: all 0.25s ease;
       cursor: pointer;
       border: none;
-      background: #fe8019; /* Gruvbox orange */
-      color: #fbf1c7; /* light0 */
+      background: #fe8019;
+      color: #fbf1c7;
       box-shadow: 0 8px 20px rgba(254, 128, 25, 0.25);
     }
 
     .btn:hover {
-      background: #d65d0e; /* Gruvbox orange_hl */
+      background: #d65d0e;
       transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(254, 128, 25, 0.35);
     }
 
     .btn-outline {
       background: transparent;
-      color: #83a598; /* Gruvbox blue */
+      color: #83a598;
       border: 2px solid #83a598;
       box-shadow: none;
     }
@@ -94,14 +94,23 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #282828;
     }
 
+    .logo svg {
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+
     .logo span {
-      color: #fe8019; /* Gruvbox orange */
+      color: #fe8019;
     }
 
     .nav-links {
@@ -112,7 +121,7 @@
 
     .nav-links a {
       position: relative;
-      color: #3c3836; /* Gruvbox dark1 */
+      color: #3c3836;
       transition: color 0.2s;
     }
 
@@ -123,7 +132,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #83a598; /* Gruvbox blue */
+      background: #83a598;
       transition: width 0.3s;
     }
 
@@ -178,7 +187,7 @@
     }
 
     .hero-content h1 span {
-      color: #fe8019; /* Gruvbox orange */
+      color: #fe8019;
       position: relative;
     }
 
@@ -212,7 +221,7 @@
       align-items: center;
       justify-content: center;
       font-size: 8rem;
-      color: #83a598; /* Gruvbox blue */
+      color: #83a598;
       background: linear-gradient(135deg, #fbf1c7 0%, #ebdbb2 100%);
       border: 2px solid rgba(251, 241, 199, 0.6);
     }
@@ -242,7 +251,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
 
@@ -286,7 +295,7 @@
     /* ---------- SOBRE MÍ ---------- */
     .about {
       padding: 80px 0;
-      background: #ebdbb2; /* Gruvbox light1 */
+      background: #ebdbb2;
     }
 
     .about .container {
@@ -342,7 +351,7 @@
     }
 
     .about-image .avatar {
-      background: linear-gradient(135deg, #fe8019, #d3869b); /* Orange to Purple */
+      background: linear-gradient(135deg, #fe8019, #d3869b);
       width: 280px;
       height: 280px;
       border-radius: 50%;
@@ -403,10 +412,10 @@
       color: #504945;
     }
 
-    /* ---------- CTA FINAL (Gruvbox Dark) ---------- */
+    /* ---------- CTA FINAL ---------- */
     .cta-section {
       padding: 80px 0;
-      background: #282828; /* Gruvbox dark0 */
+      background: #282828;
       color: #ebdbb2;
       text-align: center;
     }
@@ -439,7 +448,7 @@
 
     /* ---------- FOOTER ---------- */
     .footer {
-      background: #1d2021; /* Más oscuro que dark0 */
+      background: #1d2021;
       padding: 40px 0 24px;
       color: #928374;
       border-top: 1px solid rgba(251, 241, 199, 0.05);
@@ -460,7 +469,7 @@
 
     .footer .socials a {
       color: #928374;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       transition: color 0.2s;
     }
 
@@ -470,10 +479,18 @@
 
     .footer .copy {
       font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer .copy svg {
+      width: 28px;
+      height: 28px;
     }
 
     .footer .copy i {
-      color: #fb4934; /* Gruvbox red for heart */
+      color: #fb4934;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -510,6 +527,10 @@
         width: 200px;
         height: 200px;
         font-size: 5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -553,10 +574,6 @@
       .section-title {
         font-size: 2rem;
       }
-
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
     }
 
     @media (max-width: 480px) {
@@ -572,6 +589,15 @@
         max-width: 200px;
         font-size: 4rem;
       }
+
+      .logo svg {
+        width: 36px;
+        height: 36px;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -580,7 +606,18 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="logo">zotak<span>dev</span></a>
+      <a href="#" class="logo">
+        <!-- Logo SVG inline -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <rect width="200" height="200" rx="50" fill="#fbf1c7" stroke="#ebdbb2" stroke-width="6" />
+          <g fill="none" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M55 55 L145 55 L55 145 L145 145" stroke="#fe8019" />
+            <path d="M100 55 L100 145 M100 55 A45 45 0 0 1 145 100 A45 45 0 0 1 100 145" stroke="#83a598" />
+          </g>
+          <path d="M145 55 L55 145" stroke="#d3869b" stroke-width="8" stroke-linecap="round" opacity="0.4" />
+        </svg>
+        <span>zotak<span>dev</span></span>
+      </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#services">Servicios</a></li>
         <li><a href="#about">Sobre mí</a></li>
@@ -597,10 +634,11 @@
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-content">
-        <h1>Transformo tus ideas en <span>presencia digital</span></h1>
+        <h1>Soluciones digitales y <span>servicios técnicos</span></h1>
         <p>
-          Soy <strong>ZotakDev</strong>, un desarrollador novato con pasión por el diseño limpio y funcional.
-          Creo <strong>landing pages estáticas</strong> modernas para negocios emergentes.
+          Soy <strong>ZotakDev</strong>, desarrollador novato y técnico apasionado.
+          Creo <strong>landing pages</strong> modernas y ofrezco mantenimiento
+          integral para PC, consolas y smartphones.
         </p>
         <div class="hero-buttons">
           <a href="#contact" class="btn">Hablemos</a>
@@ -618,30 +656,40 @@
   <!-- ===== SERVICIOS ===== -->
   <section class="services" id="services">
     <div class="container">
-      <h2 class="section-title">Lo que ofrezco</h2>
+      <h2 class="section-title">Todo lo que puedo hacer por ti</h2>
       <p class="section-subtitle">
-        Soluciones digitales sencillas, rápidas y efectivas para que tu negocio destaque.
+        Desde una presencia digital impecable hasta el cuidado técnico de tus equipos.
       </p>
       <div class="services-grid">
         <div class="service-card">
           <i class="fas fa-laptop-code"></i>
           <h3>Landing Pages</h3>
-          <p>Diseño de páginas estáticas, optimizadas para conversión y con estilo moderno.</p>
+          <p>Diseño de páginas estáticas, optimizadas para conversión y con estilo moderno, ideales para negocios emergentes.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-desktop"></i>
+          <h3>Mantenimiento de PC</h3>
+          <p>Limpieza profunda de componentes internos, cambio de pasta térmica y optimización del flujo de aire para un rendimiento óptimo.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Revisión de salud</h3>
+          <p>Diagnóstico completo de hardware: discos, memoria, fuente de poder, placa base y tarjeta gráfica. Informe detallado.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-gamepad"></i>
+          <h3>Desbloqueo de consolas</h3>
+          <p>Softmod para PlayStation, Xbox y Nintendo. Amplía las capacidades de tu consola de forma segura y sin riesgos.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-mobile-alt"></i>
-          <h3>Totalmente Responsive</h3>
-          <p>Tu página se verá impecable en cualquier dispositivo: móvil, tablet o escritorio.</p>
+          <h3>Mantenimiento de smartphones</h3>
+          <p>Limpieza de conectores, cambio de batería, reparación de pantalla y optimización de software para alargar su vida útil.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-bolt"></i>
-          <h3>Carga Rápida</h3>
-          <p>Código ligero y optimizado, sin dependencias pesadas, para una experiencia veloz.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-palette"></i>
-          <h3>Diseño a Medida</h3>
-          <p>Adapto la identidad visual de tu negocio en cada detalle, con colores y tipografías.</p>
+          <i class="fas fa-tools"></i>
+          <h3>Servicios adicionales</h3>
+          <p>Instalación de sistemas operativos, recuperación de datos, asesoría en compras de hardware y configuración de redes.</p>
         </div>
       </div>
     </div>
@@ -653,13 +701,14 @@
       <div class="about-content">
         <h2>Hola, soy <span>ZotakDev</span></h2>
         <p>
-          Aunque soy novato en el mundo del desarrollo web, tengo una gran pasión por aprender
-          y crear soluciones que realmente ayuden a pequeños negocios a tener presencia online.
+          Aunque soy novato en el mundo del desarrollo web y la reparación técnica,
+          tengo una gran pasión por aprender y ofrecer soluciones que realmente
+          ayuden a las personas y a sus negocios.
         </p>
         <p>
-          Cada proyecto lo abordo con dedicación, atención al detalle y un enfoque centrado
-          en el usuario. Mi objetivo es que tu landing page no solo sea bonita, sino que
-          también convierta visitantes en clientes.
+          Abordo cada proyecto con dedicación, atención al detalle y un enfoque
+          centrado en el usuario. Mi objetivo es que tu experiencia sea impecable,
+          ya sea a través de una landing page o del cuidado de tus equipos.
         </p>
         <div class="about-stats">
           <div class="stat-item">
@@ -689,35 +738,35 @@
     <div class="container">
       <h2 class="section-title">Lo que dicen de mí</h2>
       <p class="section-subtitle">
-        Pequeños emprendedores que confiaron en mi trabajo.
+        Clientes que confiaron en mis servicios técnicos y digitales.
       </p>
       <div class="testimonial-grid">
         <div class="testimonial-card">
           <i class="fas fa-quote-left"></i>
           <p>
-            “Superó mis expectativas. Mi landing page quedó exactamente como la imaginaba,
-            y en menos de una semana estaba funcionando.”
+            “Mi PC volvió a funcionar como nueva. La limpieza y el cambio de pasta
+            térmica hicieron magia. ZotakDev es muy cuidadoso y profesional.”
           </p>
-          <div class="author">— Laura G.</div>
-          <div class="role">Dueña de cafetería</div>
+          <div class="author">— Andrés R.</div>
+          <div class="role">Gamer / Streamer</div>
         </div>
         <div class="testimonial-card">
           <i class="fas fa-quote-left"></i>
           <p>
-            “Muy profesional a pesar de ser novato. Me explicó cada paso y logró un diseño
-            que refleja la esencia de mi marca.”
+            “Me desbloqueó mi PlayStation con softmod y ahora puedo usar homebrew.
+            Explicó todo el proceso con claridad. Muy recomendable.”
           </p>
-          <div class="author">— Carlos M.</div>
-          <div class="role">Consultor freelance</div>
+          <div class="author">— Camila P.</div>
+          <div class="role">Entusiasta retro</div>
         </div>
         <div class="testimonial-card">
           <i class="fas fa-quote-left"></i>
           <p>
-            “Excelente relación calidad-precio. La página carga rápido y se ve increíble
-            en el móvil. Totalmente recomendable.”
+            “La landing page que diseñó para mi negocio de reparaciones es impecable.
+            Atrajo nuevos clientes en la primera semana. ¡Gracias ZotakDev!”
           </p>
-          <div class="author">— Sofía R.</div>
-          <div class="role">Emprendedora digital</div>
+          <div class="author">— Diego M.</div>
+          <div class="role">Dueño de taller técnico</div>
         </div>
       </div>
     </div>
@@ -728,8 +777,8 @@
     <div class="container">
       <h2>¿Listo para dar el salto?</h2>
       <p>
-        Cuéntame tu idea y juntos crearemos una landing page que impulse tu negocio.
-        ¡Sin compromiso!
+        Cuéntame qué necesitas: ¿una página web para tu negocio o mantenimiento
+        para tus equipos? Estaré encantado de ayudarte.
       </p>
       <a href="mailto:tuemail@example.com" class="btn">Contáctame ahora</a>
     </div>
@@ -739,20 +788,26 @@
   <footer class="footer">
     <div class="container">
       <div class="copy">
-        &copy; 2026 zotakdev · Hecho con <i class="fas fa-heart"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="28" height="28">
+          <rect width="200" height="200" rx="50" fill="#fbf1c7" stroke="#ebdbb2" stroke-width="6" />
+          <g fill="none" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M55 55 L145 55 L55 145 L145 145" stroke="#fe8019" />
+            <path d="M100 55 L100 145 M100 55 A45 45 0 0 1 145 100 A45 45 0 0 1 100 145" stroke="#83a598" />
+          </g>
+          <path d="M145 55 L55 145" stroke="#d3869b" stroke-width="8" stroke-linecap="round" opacity="0.4" />
+        </svg>
+        <span>&copy; 2026 zotakdev · Hecho con <i class="fas fa-heart"></i></span>
       </div>
       <div class="socials">
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/zotakkun" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
     </div>
   </footer>
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
-    // --- Menú hamburguesa ---
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
@@ -760,21 +815,18 @@
       navLinks.classList.toggle('active');
     });
 
-    // Cerrar menú al hacer clic en un enlace (para móvil)
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
     });
 
-    // --- Cerrar menú al hacer scroll ---
     window.addEventListener('scroll', () => {
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
       }
     });
 
-    // --- Smooth scroll para todos los enlaces internos ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
