@@ -7,7 +7,7 @@
   <!-- Font Awesome (iconos) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* ---------- RESET & BASE ---------- */
+    /* ---------- RESET & BASE (Gruvbox) ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +16,8 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: #fafcff;
-      color: #1e293b;
+      background-color: #fbf1c7; /* Gruvbox light0 */
+      color: #282828; /* Gruvbox dark0 */
       line-height: 1.6;
       scroll-behavior: smooth;
     }
@@ -37,7 +37,7 @@
       padding: 0 24px;
     }
 
-    /* ---------- BUTTONS ---------- */
+    /* ---------- BUTTONS (Gruvbox) ---------- */
     .btn {
       display: inline-block;
       padding: 12px 32px;
@@ -47,29 +47,29 @@
       transition: all 0.25s ease;
       cursor: pointer;
       border: none;
-      background: #2563eb;
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+      background: #fe8019; /* Gruvbox orange */
+      color: #fbf1c7; /* light0 */
+      box-shadow: 0 8px 20px rgba(254, 128, 25, 0.25);
     }
 
     .btn:hover {
-      background: #1d4ed8;
+      background: #d65d0e; /* Gruvbox orange_hl */
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 12px 28px rgba(254, 128, 25, 0.35);
     }
 
     .btn-outline {
       background: transparent;
-      color: #2563eb;
-      border: 2px solid #2563eb;
+      color: #83a598; /* Gruvbox blue */
+      border: 2px solid #83a598;
       box-shadow: none;
     }
 
     .btn-outline:hover {
-      background: #2563eb;
-      color: #fff;
+      background: #83a598;
+      color: #fbf1c7;
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 12px 28px rgba(131, 165, 152, 0.3);
     }
 
     /* ---------- NAVBAR ---------- */
@@ -78,10 +78,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(251, 241, 199, 0.88);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 20px rgba(40, 40, 40, 0.06);
       z-index: 999;
       padding: 16px 0;
       transition: all 0.3s ease;
@@ -97,11 +97,11 @@
       font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.5px;
-      color: #0f172a;
+      color: #282828;
     }
 
     .logo span {
-      color: #2563eb;
+      color: #fe8019; /* Gruvbox orange */
     }
 
     .nav-links {
@@ -112,7 +112,7 @@
 
     .nav-links a {
       position: relative;
-      color: #334155;
+      color: #3c3836; /* Gruvbox dark1 */
       transition: color 0.2s;
     }
 
@@ -123,12 +123,12 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #2563eb;
+      background: #83a598; /* Gruvbox blue */
       transition: width 0.3s;
     }
 
     .nav-links a:hover {
-      color: #0f172a;
+      color: #282828;
     }
 
     .nav-links a:hover::after {
@@ -149,7 +149,7 @@
       display: block;
       width: 28px;
       height: 3px;
-      background: #0f172a;
+      background: #282828;
       border-radius: 4px;
       transition: all 0.3s;
     }
@@ -157,8 +157,8 @@
     /* ---------- HERO ---------- */
     .hero {
       padding: 140px 0 80px;
-      background: linear-gradient(145deg, #f8fcff 0%, #eef4ff 100%);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      background: linear-gradient(145deg, #fbf1c7 0%, #ebdbb2 100%);
+      border-bottom: 1px solid rgba(40, 40, 40, 0.04);
     }
 
     .hero .container {
@@ -173,18 +173,18 @@
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -1.5px;
-      color: #0f172a;
+      color: #282828;
       margin-bottom: 20px;
     }
 
     .hero-content h1 span {
-      color: #2563eb;
+      color: #fe8019; /* Gruvbox orange */
       position: relative;
     }
 
     .hero-content p {
       font-size: 1.2rem;
-      color: #475569;
+      color: #3c3836;
       margin-bottom: 36px;
       max-width: 480px;
     }
@@ -202,25 +202,25 @@
     }
 
     .hero-image .illustration {
-      background: #ffffff;
+      background: #fbf1c7;
       border-radius: 60% 40% 30% 70% / 50% 40% 60% 50%;
       width: 100%;
       max-width: 420px;
       aspect-ratio: 1/1;
-      box-shadow: 0 30px 60px rgba(37, 99, 235, 0.12);
+      box-shadow: 0 30px 60px rgba(131, 165, 152, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 8rem;
-      color: #2563eb;
-      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: #83a598; /* Gruvbox blue */
+      background: linear-gradient(135deg, #fbf1c7 0%, #ebdbb2 100%);
+      border: 2px solid rgba(251, 241, 199, 0.6);
     }
 
     /* ---------- SECCIÓN SERVICIOS ---------- */
     .services {
       padding: 80px 0;
-      background: #ffffff;
+      background: #fbf1c7;
     }
 
     .section-title {
@@ -229,12 +229,12 @@
       font-weight: 700;
       letter-spacing: -1px;
       margin-bottom: 16px;
-      color: #0f172a;
+      color: #282828;
     }
 
     .section-subtitle {
       text-align: center;
-      color: #64748b;
+      color: #504945;
       font-size: 1.1rem;
       max-width: 600px;
       margin: 0 auto 56px;
@@ -247,26 +247,26 @@
     }
 
     .service-card {
-      background: #f8fcff;
+      background: #fbf1c7;
       padding: 36px 28px;
       border-radius: 28px;
-      border: 1px solid rgba(37, 99, 235, 0.06);
+      border: 1px solid #ebdbb2;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 4px 12px rgba(40, 40, 40, 0.02);
       text-align: center;
     }
 
     .service-card:hover {
       transform: translateY(-8px);
-      border-color: #2563eb;
-      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
+      border-color: #83a598;
+      box-shadow: 0 20px 40px rgba(131, 165, 152, 0.10);
     }
 
     .service-card i {
       font-size: 2.8rem;
-      color: #2563eb;
+      color: #fe8019;
       margin-bottom: 20px;
-      background: #eef4ff;
+      background: #ebdbb2;
       padding: 16px;
       border-radius: 20px;
       display: inline-block;
@@ -275,18 +275,18 @@
     .service-card h3 {
       font-size: 1.4rem;
       margin-bottom: 12px;
-      color: #0f172a;
+      color: #282828;
     }
 
     .service-card p {
-      color: #475569;
+      color: #3c3836;
       font-size: 0.95rem;
     }
 
     /* ---------- SOBRE MÍ ---------- */
     .about {
       padding: 80px 0;
-      background: #f8fcff;
+      background: #ebdbb2; /* Gruvbox light1 */
     }
 
     .about .container {
@@ -300,16 +300,16 @@
       font-size: 2.4rem;
       font-weight: 700;
       letter-spacing: -1px;
-      color: #0f172a;
+      color: #282828;
       margin-bottom: 16px;
     }
 
     .about-content h2 span {
-      color: #2563eb;
+      color: #fe8019;
     }
 
     .about-content p {
-      color: #475569;
+      color: #3c3836;
       margin-bottom: 20px;
       font-size: 1.05rem;
     }
@@ -327,12 +327,12 @@
     .stat-item .number {
       font-size: 2rem;
       font-weight: 700;
-      color: #0f172a;
+      color: #282828;
       display: block;
     }
 
     .stat-item .label {
-      color: #64748b;
+      color: #504945;
       font-size: 0.9rem;
     }
 
@@ -342,7 +342,7 @@
     }
 
     .about-image .avatar {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      background: linear-gradient(135deg, #fe8019, #d3869b); /* Orange to Purple */
       width: 280px;
       height: 280px;
       border-radius: 50%;
@@ -350,14 +350,14 @@
       align-items: center;
       justify-content: center;
       font-size: 7rem;
-      color: #fff;
-      box-shadow: 0 30px 50px rgba(37, 99, 235, 0.25);
+      color: #fbf1c7;
+      box-shadow: 0 30px 50px rgba(254, 128, 25, 0.20);
     }
 
     /* ---------- TESTIMONIOS ---------- */
     .testimonials {
       padding: 80px 0;
-      background: #ffffff;
+      background: #fbf1c7;
     }
 
     .testimonial-grid {
@@ -368,46 +368,46 @@
     }
 
     .testimonial-card {
-      background: #f8fcff;
+      background: #fbf1c7;
       padding: 32px 28px;
       border-radius: 24px;
-      border: 1px solid rgba(0, 0, 0, 0.02);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ebdbb2;
+      box-shadow: 0 4px 12px rgba(40, 40, 40, 0.02);
       transition: 0.3s;
     }
 
     .testimonial-card:hover {
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 16px 32px rgba(40, 40, 40, 0.04);
     }
 
     .testimonial-card i {
-      color: #2563eb;
+      color: #fe8019;
       font-size: 1.6rem;
       margin-bottom: 16px;
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
     .testimonial-card p {
       font-style: italic;
-      color: #334155;
+      color: #282828;
       margin-bottom: 16px;
     }
 
     .testimonial-card .author {
       font-weight: 600;
-      color: #0f172a;
+      color: #282828;
     }
 
     .testimonial-card .role {
       font-size: 0.85rem;
-      color: #64748b;
+      color: #504945;
     }
 
-    /* ---------- CTA FINAL ---------- */
+    /* ---------- CTA FINAL (Gruvbox Dark) ---------- */
     .cta-section {
       padding: 80px 0;
-      background: #0f172a;
-      color: #fff;
+      background: #282828; /* Gruvbox dark0 */
+      color: #ebdbb2;
       text-align: center;
     }
 
@@ -416,32 +416,33 @@
       font-weight: 700;
       margin-bottom: 16px;
       letter-spacing: -1px;
+      color: #ebdbb2;
     }
 
     .cta-section p {
       font-size: 1.1rem;
-      color: #cbd5e1;
+      color: #d5c4a1;
       max-width: 500px;
       margin: 0 auto 32px;
     }
 
     .cta-section .btn {
-      background: #fff;
-      color: #0f172a;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      background: #fbf1c7;
+      color: #282828;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .cta-section .btn:hover {
-      background: #e2e8f0;
+      background: #ebdbb2;
       transform: translateY(-3px);
     }
 
     /* ---------- FOOTER ---------- */
     .footer {
-      background: #0b1324;
+      background: #1d2021; /* Más oscuro que dark0 */
       padding: 40px 0 24px;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      color: #928374;
+      border-top: 1px solid rgba(251, 241, 199, 0.05);
     }
 
     .footer .container {
@@ -458,17 +459,21 @@
     }
 
     .footer .socials a {
-      color: #94a3b8;
+      color: #928374;
       font-size: 1.4rem;
       transition: color 0.2s;
     }
 
     .footer .socials a:hover {
-      color: #ffffff;
+      color: #ebdbb2;
     }
 
     .footer .copy {
       font-size: 0.9rem;
+    }
+
+    .footer .copy i {
+      color: #fb4934; /* Gruvbox red for heart */
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -514,17 +519,17 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(251, 241, 199, 0.98);
         backdrop-filter: blur(12px);
         flex-direction: column;
         padding: 24px 32px;
         gap: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 20px 40px rgba(40, 40, 40, 0.06);
         transform: translateY(-10px);
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
-        border-top: 1px solid rgba(0, 0, 0, 0.04);
+        border-top: 1px solid #ebdbb2;
       }
 
       .nav-links.active {
@@ -580,7 +585,7 @@
         <li><a href="#services">Servicios</a></li>
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#testimonials">Testimonios</a></li>
-        <li><a href="#contact" class="btn" style="padding: 8px 24px; background: #2563eb; color: #fff; box-shadow: none;">Contacto</a></li>
+        <li><a href="#contact" class="btn" style="padding: 8px 24px; background: #83a598; color: #fbf1c7; box-shadow: none;">Contacto</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -734,7 +739,7 @@
   <footer class="footer">
     <div class="container">
       <div class="copy">
-        &copy; 2026 zotakdev · Hecho con <i class="fas fa-heart" style="color: #ef4444; font-size: 0.9rem;"></i>
+        &copy; 2026 zotakdev · Hecho con <i class="fas fa-heart"></i>
       </div>
       <div class="socials">
         <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -762,14 +767,14 @@
       });
     });
 
-    // --- Cerrar menú al hacer scroll (opcional) ---
+    // --- Cerrar menú al hacer scroll ---
     window.addEventListener('scroll', () => {
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
       }
     });
 
-    // --- Smooth scroll para todos los enlaces internos (opcional) ---
+    // --- Smooth scroll para todos los enlaces internos ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
